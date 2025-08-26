@@ -1,0 +1,5 @@
+#print(f'\nHello the Package_01 has had its init executed\n')
+#print(f'Now we have to figure why the rest of this is not working\n')
+#print(f'Main will imports (1) vars_01 first, then (2) mssgs), then (3) funcs_01\n')
+#print(f'Each will self-report the beginning of its importation\n')
+#print('*'*40,'\n')
