@@ -1,4 +1,4 @@
-# Date: 8/25b/2025  --Status: adding Webster drive function
+# Date: 8/29a/2025  --Status: adding m option for Webster drive function
 # previous problems: Escaping from Circular Import Hell, overcoming sticky keyboard keys, ...
 # https://steppingback269.blogspot.com/2025/08/crash-burn-rinse-and-repeat-your-slow.html
 '''
@@ -16,8 +16,8 @@ start of line delimiter code followed by: (2) 3-char domain initials e.g. TXT, U
 
 ... more to follow
 
-Package_01 of modules contains a vars_01 module and a messages_01 module that tracks the messages presented to the user
-Package_01 also contains a funcs_01 module holding many of the functions previously store in the original
+Package_03 of modules contains a vars_01 module and a messages_01 module that tracks the messages presented to the user
+Package_03 also contains a funcs_01 module holding many of the functions previously store in the original
 Learn_List_Methods file
 '''
 
@@ -31,9 +31,12 @@ import pyperclip            #--- enable use of clipboard
 #import random
 from random import choice   #--- enable random choice() method
 
-from Package_01 import vars_01 as v  #-- google "python syntax of an import from statement"
-from Package_01 import mssgs_01 as msg
-from Package_01 import funcs_01 as fn
+from Package_03 import vars_01 as v  #-- google "python syntax of an import from statement"
+from Package_03 import mssgs_01 as msg
+from Package_03 import funcs_01 as fn
+
+fn.clear_d_screen()
+#breakpoint()
 
 # Here is first WELCOME mat using the imported functions (fn[dot] prefix)
 spc = ' '
@@ -52,7 +55,11 @@ print('\n'*2)   #-- screen partial fill amount for id= '00'
 #--------------------------------------------#
 #fn.clear_keybd_queue()
 response = fn.wait_4c_key('00.1')   #--vv-- aside_001 is the next frame to be shown
-fn.screen_clear()
+
+url_02 = "https://steppingback269.blogspot.com/2025/07/links-for-python-noobs.html"
+if response == 'm':
+    webbrowser.open(url_02)     #-- show  Links for Noobs in browser
+fn.clear_d_screen()
 
 display_id = '(00.1)'   #-- print GUI box for aside number 00.1
 fn.sl1(display_id, f'{v.g_}▉', 78)      #-- get the sl1 function from the funcs module !!!
@@ -66,21 +73,25 @@ print('\n')
 #------initial URL's demo----vvv---------------#
 
 url_00 = "https://www.youtube.com/watch?v=mhNg55_IYiw&list=RDmhNg55_IYiw&start_radio=1&t=189s" #chill flow music
-webbrowser.open(url_00)
+#webbrowser.open(url_00)
 #print("webster MUSIC launch temporarily disabled at line 67 ???\n")
 
-url_01 = "https://oldmanlearningsupport.blogspot.com/2025/07/back-stage-support-for-old-man-learns.html"
-webbrowser.open(url_01)
+#url_01 = "https://oldmanlearningsupport.blogspot.com/2025/07/back-stage-support-for-old-man-learns.html"
+#webbrowser.open(url_01)
 #print("webster back stage temporarily disabled at line 72 ???\n")
 
-url_02 = "https://steppingback269.blogspot.com/2025/07/links-for-python-noobs.html"
-webbrowser.open(url_02)
+#url_02 = "https://steppingback269.blogspot.com/2025/07/links-for-python-noobs.html"
+#webbrowser.open(url_02)
 #print("webster Old Man for NOOBS temporarily disabled at MAIN line 76 ??")
 
 #--------------------------------------------#
-#fn.clear_keybd_queue()
+
 response = fn.wait_4c_key('00.2')   #-- SECOND "aside_" frame number 002 follows this hit of the c key
-fn.screen_clear()
+url_01 = "https://oldmanlearningsupport.blogspot.com/2025/07/back-stage-support-for-old-man-learns.html"
+if response == 'm':
+    webbrowser.open(url_01)     #-- show  Back Stage in browser
+
+fn.clear_d_screen()
 display_id = '(00.2)'   #-- print GUI box for aside number 00.1
 fn.sl1(display_id, f'{v.g_}▉', 77)      #-- get the sl1 function from the funcs module !!!
 fn.slm(msg.aside_002, f'{v.g_}▉▉')    #-- middle line uses text fetched from the messages module !!!!
@@ -112,6 +123,8 @@ print('\n'*0)   #-- screen fill amount for id= '02'
 #fn.clear_keybd_queue()
 # explore more options = ????
 response = fn.wait_4c_key('02')   #-- Begin lesson for APPEND after hit of c key here
+
+fn.clear_d_screen()
 display_id = '(02)'   #-- print GUI box for frame number 02
 
 breakpoint()

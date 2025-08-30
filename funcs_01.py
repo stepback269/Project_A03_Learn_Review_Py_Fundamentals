@@ -17,9 +17,9 @@ of those modules, namely, those of the vars_01 module plus those of the mssgs_01
 #print(f'(3) The importation of funcs_01 into Main has begun\n')
 
 
-def screen_clear():         #-- easy answer for frame alignment !!!
-    print('\n'*50)
-    gu.moveto(0,0)
+def clear_d_screen(lines: int = 30):         #-- easy answer for frame alignment !!!
+    print('\n'*lines)
+    gu.moveTo(200,600)
     return
 
 
@@ -188,8 +188,9 @@ def webster_drive(mssg_type= 'URL_web', frame_id= '00', picks= 'A-Z'): ### NEW  
     return
 
 
-def wait_4c_key(display_id = '(001)', allowed = f'"c" or "SPACE"'):
-    intro_01x: str = f'Hit {v.g_}{allowed}{v.z_} to continue to next learning frame'
+def wait_4c_key(display_id = '(001)', allowed_01 = f'"c" or "SPACE"', allowed_02 = f' "m" '):
+    intro_01x: str = (f'Hit {v.g_}{allowed_01}{v.z_} to continue to next learning frame, '
+                      f'or Hit {v.g_}{allowed_02}{v.z_} to Explore More')
     outp_01x: str = f'{v.R_}next = {display_id}--> {intro_01x.center(90)}';
     print(outp_01x)
     reponse= 'xxx'
@@ -209,16 +210,14 @@ def wait_4c_key(display_id = '(001)', allowed = f'"c" or "SPACE"'):
             response = ' '
             # print(f'\nYou Pressed the "SPACE" key --this is a debug notification')
             break
+        elif keyrd == "m":  # if the "m" key is pressed
+            wait_01 == False;
+            response = 'm'
+            # print(f'\nYou Pressed the "m" key --this is a debug notification')
+            break
         else:
             continue
     return response
-
-def clear_keybd_queue():
-    spin = 0
-    while spin <= 100:  # --- waste time to debounce the key BEFORE reading a c or space ???
-        #clear_queue = keyboard.read_key()
-        spin += 1
-    else: return
 
 def next_frame(display_id = '(00)'): ##169
     intro_01x: str = 'Hit "c" or "SPACE" to continue to next learning frame'
