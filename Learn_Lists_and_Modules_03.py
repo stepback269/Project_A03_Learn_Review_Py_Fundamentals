@@ -1,4 +1,4 @@
-# Date: 9/01a/2025  --Status: added  "m" option for Webster drive function & link to Back Pagesm
+# Date: 9/08a/2025  --Status: added  "m" option for Webster drive function & link to Back Pagesm
 # previous problems: Escaping from Circular Import Hell, overcoming sticky keyboard keys, ...
 # https://steppingback269.blogspot.com/2025/08/crash-burn-rinse-and-repeat-your-slow.html
 '''
@@ -57,14 +57,18 @@ print('\n'*2)   #-- screen partial fill amount for id= '00'
 response = fn.wait_4c_key('00.1')   #--vv-- aside_001 is the next frame to be shown
 
 #url_02 = "https://steppingback269.blogspot.com/2025/07/links-for-python-noobs.html"
-url_02 = "https://oldmanlearningsupport.blogspot.com/2025/08/frame-000-of-learn-lists-and-modules.html" #back page (000)
+url_02 = f'https://oldmanlearningsupport.blogspot.com/2025/08/frame-000-of-learn-lists-and-modules.html' #back page (000)
 if response == 'm':
     m_count = 1
+    m_id_list =["top_of_page", "mid_of_page", "bot_of_page", "top_of_page", "mid_of_page"]
     webbrowser.open(url_02)     #-- show  Links for Noobs in browser
     while m_count <= 3:
         response = fn.wait_4c_key('00.1')
         if response == 'm':
             m_count += 1
+            url_02 = f'https://oldmanlearningsupport.blogspot.com/2025/08/frame-000-of-learn-lists-and-modules.html#{m_id_list[m_count-1]}'
+            webbrowser.open(url_02)
+            print(f'\033[F\r')  #--cursor back to previous line + carriage return
             continue
         elif response != 'm':
             break

@@ -93,6 +93,25 @@ aside_002E = f'(c) So no more diversions. Let\'s get straight to the 11 LIST MET
 aside_002F = f'(d) We want to understand MORE than just the methods.'
 aside_002G = f'(e) We want a {v.r_}DEEP understanding{v.z_} of how to {v.yy_}cleverly{v.z_} use the methods.'
 
+aside_007 = f'{v.z_}"Aside" frame re: {v.yy_}Random Shuffling of a LIST{v.z_}'
+aside_007A = (f'(a) 007A <--This is link to {v.yy_}Learn Python Interactively{v.z_} URL= '
+              f'https://learnpython.ai/welcome-to-learnpython)')
+aside_007B = f'(a.1) 007B <-- {v.yy_}Re Libraries,{v.z_} See https://www.youtube.com/results?search_query=external+libraries+python'
+aside_007C = f'(b) 007C <-- This is link to {v.yy_}Indently T-strings{v.z_} https://www.youtube.com/watch?v=vymJMn97wks'
+aside_007D = f'(c) 007D <-- This is link to {v.yy_}Bro Code LIST Comprehensions{v.z_} https://www.youtube.com/watch?v=YlY2g2xrl6Q'
+aside_007E = f'(e) 007E <-- This is link to {v.yy_}Reddit Learn PY wiki{v.z_} https://www.reddit.com/r/learnpython/wiki/index/'
+aside_007F = f'(f) 007F <-- This is link to {v.r_}Py org"s wiki {v.z_} https://wiki.python.org/moin/'
+rt_arrow_001G = f'-{v.yy_}={v.r_}' *10
+aside_007G = (f'(g) 007G <-- This is link to {v.r_} Luke"s {rt_arrow_001G}--->{v.z_}\n'
+              f'\thttps://www.youtube.com/watch?v=wUSDVGivd-8&t=1132s')
+aside_007H = (f'(1) 007H <-- This is link to {v.yy_}MUSIC TO CODE BY{v.z_} \n'
+              f'\thttps://www.youtube.com/watch?v=npNU0JIYZA0&list=RDnpNU0JIYZA0&start_radio=1')
+aside_007I = f'(2) 007I <-- This is link to {v.yy_}Old Man\'s Back Stage{v.z_} page https://oldmanlearningsupport.blogspot.com'
+aside_007J = (f'(3) 007J <-- This is link to {v.yy_}Old Man\'s Links for Python Noobs{v.z_} page\n'
+              f'\t https://steppingback269.blogspot.com/2025/07/links-for-python-noobs.html')
+aside_007K = f'--^^^--- These are {v.g_}just for Demo purposes{v.z_} of webster\'s capabilities'
+aside_007L = f'007L <-- This is link to ______________________'
+
 
 append_01 = f'{v.yy_}THE APPEND() METHOD{v.z_}'
 append_01A = f'{v.z_}The APPEND() function extends by by ONE item & is inherently built in for all instances of LIST objects'

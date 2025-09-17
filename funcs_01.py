@@ -141,9 +141,10 @@ def outp_centrd_mssgs(mssg_type= 'intro_', frame_id= '00', lo_hi_range= 'A-Z'):
         #exec(outp_mssg_i)   #-- THIS DIDN'T WORK
     return
 
-def outp_in_list(list_name = msg.intro_00_in_list, colors = 'GREEN', indent=10):
+def outp_in_list(list_name = msg.intro_00_in_list, colors = 'GREEN', indent=10, spc=' '):
     for item in list_name:
-        print(f'{msg.Anssii[colors]}{spc:<10}{item}')       #-- note colon between spc and indent amount
+        gotten_mssg = getattr(msg, item)
+        print(f'{v.Ansii[colors]}{spc:<10}{gotten_mssg}')       #-- note colon between spc and indent amount
     #print(f'{x4}\nend of for loop hit <--a debug notification\n')
     return
 
@@ -192,13 +193,15 @@ def wait_4c_key(display_id = '(001)', allowed_01 = f'"c" or "SPACE"', allowed_02
     intro_01x: str = (f'Hit {v.g_}{allowed_01}{v.z_} to continue to next learning frame, '
                       f'or Hit {v.g_}{allowed_02}{v.z_} to Explore More')
     outp_01x: str = f'{v.R_}next = {display_id}--> {intro_01x.center(90)}';
-    print(outp_01x)
+    print('\033[A\r', outp_01x, sep='', end='')
     reponse= 'xxx'
     wait_01 = True
     while wait_01 == True:
-        keyrd = keyboard.read_key()  # -- do TWO ??? read opertions in outer while loop
-        keyrd = keyboard.read_key()  #--^^-- for debouncing the key?
-        keyrd = keyrd.lower()
+        #keyrd = keyboard.read_key()  # -- do TWO ??? read opertions in outer while loop
+        #keyrd = keyboard.read_key()  #--^^-- for debouncing the key?
+        keyrd = keyboard.read_event(suppress= True)
+        keyrd = keyboard.read_event(suppress=True)
+        keyrd = keyrd.name.lower()
         if keyrd == "c":  # if the "c" key is pressed
             wait_01 == False;
             response = 'c'
