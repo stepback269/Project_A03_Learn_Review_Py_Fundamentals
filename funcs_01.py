@@ -1,12 +1,13 @@
-# Date: 8/25a/2025   current editing line = search for "NEW"
+print(f'Date: 10/06_M2/2025   current editing line = search for "NEW"  =fatten() function')
 
 # check out the Data Engineer: https://www.youtube.com/@GambillDataEngineering
 
-from . import vars_01 as v  #-- google "python syntax of an import from statement"
-from . import mssgs_01 as msg
+import vars_01 as v  #-- google "python syntax of an import from statement"
+import mssgs_01 as msg
 import keyboard
 import pyautogui as gu
 import webbrowser
+import pyshorteners
 '''
 Although the MAIN module imports all the necessary module codes, this module must import the name-space aspects
 of those modules, namely, those of the vars_01 module plus those of the mssgs_01 module 
@@ -17,11 +18,79 @@ of those modules, namely, those of the vars_01 module plus those of the mssgs_01
 #print(f'(3) The importation of funcs_01 into Main has begun\n')
 
 
-def clear_d_screen(lines: int = 30):         #-- easy answer for frame alignment !!!
+def clear_d_screen(lines: int = 30):         #-- use os.clr and skip instead
     print('\n'*lines)
     gu.moveTo(200,600)
     return
 
+def skip(n=2):        #skip this many lines
+    print('\n'*n)
+    return
+
+#def gen_short_url(url: str = 'https://www.yahoo.com', text: str = '(here)', parameters: dict = None) -> str:
+#    if text is None:
+#        text = url
+#    if parameters is None:
+#        parameters = {}
+#    kvs = ":".join("{}={}".format(k, v) for k, v in parameters.items())
+#    template = "\033]8;{};{}\033\\{}\\033]8;;\033\\"
+#    result = template.format(parameters, url, text)
+#    return result
+
+def gen_short_url(url: str = 'https://www.yahoo.com', preface: str = 'Click here-->', postfix: str = 'for more info') -> str:
+    url_shortener = pyshorteners.Shortener()
+    short_url = url_shortener.tinyurl.short(url)
+    print(preface, short_url, postfix, end=' ')     #-- ender here allows for a postfix number 2
+    return short_url        #see https://www.techgeekbuzz.com/blog/how-to-make-a-url-shortener-in-python/
+
+##NEW
+def strip_outr_bracks(nested_list):
+    for sub in nested_list:
+        print(f'{sub} ___ ', end="")
+        print(f'\n')
+
+def strip_inner_bracks(nested_list):
+    for sub in nested_list:
+        for element in sub:
+            print(f'{element}, ', end="")
+    print(f'\n')
+
+
+def fatten(skinny, eps = 25):   #-- skinny= flat list, eps= elements per full sub-list, returns fat list
+    l = len(skinny)             #-- number of elements in the input flat list
+    r= len(skinny) % eps        #-- number of elements in the last, leftovers sublist
+    num_fulls = int(l / eps)  # -- number of full sub-strings, each having len() equal to eps
+    #n = num_fulls
+    # -- see https://www.w3schools.com/python/ref_func_int.asp TRy_it= REPL
+    if l <= eps:
+        return skinny           #-- skinny cannot be fattened, so return it as is
+    #fat = []                   #-- start it as empty, the sublists will be appended with extend()
+
+    #  [123 ...25] [26 ... 50] [51 ...75] ... [ ... N*eps] --picture if index starts as 1
+    #  [012 ...24] [25 ... 49] [50 ...74] ... [ ... (N*eps-1)] --picture if index starts as 0
+    #  [012 ...((N=1)*eps-1)] [25 ... ((N=2)*eps-1)] [50 ...((N=3)*eps-1)] ... [ ... (N*eps-1)] --picture if index starts as 0
+    #fat = [sub for i in range(num_fulls)]   ###- replace sub with a comprehension TO BE CONTINUED
+    fat = [[skinny[(n*eps):(n+1)*eps]] for n in range(num_fulls)]
+    #fat.extend(reaminder)  # --STILL NEED TO COMPLETE THIS PART
+    return fat
+
+
+def add_alpha_enum(list, start='a'):  #enumerate a list with alpahebetic sequence
+    ascii_numbered_tuples = enumerate(list, ord(start))
+    print(f'Below for debug are the ascii enumerate tuples\n\t')
+    for i, phrase in enumerate(list, ord(start)):
+        print(f'Index: {i}, Phrase: {phrase}')
+    print('\n\n')
+    for i, phrase in enumerate(list, ord(start)):
+        print(f'({chr(i)}) {phrase}')
+    #see https://www.geeksforgeeks.org/python/enumerate-in-python/
+    temp_lst1 = [f'({chr(i)}) {phrase}' for i, phrase in enumerate(list, ord(start))]
+    print('\n\t',temp_lst1)
+    print(f'--^^^-- Abve was generated with a list comprehension: \n')
+    print(f"temp_lst1 = [f\'({chr(i)}) {phrase}\' for i, phrase in enumerate(list, ord(start))]\n")
+    for item in temp_lst1:
+        print(item)
+    return ascii_numbered_tuples
 
 def ascii_fm_az(fm2: str = 'A-Z'):  #cap alpha's have the smaller ANSI code values than lower case
     lo_hi = fm2.split(sep ='-') #get from and to chars

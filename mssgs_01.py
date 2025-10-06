@@ -4,7 +4,7 @@
 '''
 ... more to follow
 '''
-from . import vars_01 as v #-- we are NOT importing the primary vars because main already loaded them !!!
+import vars_01 as v #-- we are NOT importing the primary vars because main already loaded them !!!
 #from . import funcs_01 as fn
 
 #v = vars_01() #-- because above ^^^ imports are blocked
@@ -112,6 +112,9 @@ aside_007J = (f'(3) 007J <-- This is link to {v.yy_}Old Man\'s Links for Python 
 aside_007K = f'--^^^--- These are {v.g_}just for Demo purposes{v.z_} of webster\'s capabilities'
 aside_007L = f'007L <-- This is link to ______________________'
 
+aside_008 = f'{v.z_}"Aside" frame re: {v.yy_}Enumerate applied to a LIST{v.z_}'
+
+aside_009 = f'{v.z_}"Aside" frame re: {v.yy_}TwT\'s 10 COMPREHENSIONS to know{v.z_}'
 
 append_01 = f'{v.yy_}THE APPEND() METHOD{v.z_}'
 append_01A = f'{v.z_}The APPEND() function extends by by ONE item & is inherently built in for all instances of LIST objects'
