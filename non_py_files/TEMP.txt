@@ -1,0 +1,16 @@
+#form lists & modules
+display_id = '(01)'   #-- print GUI box for frame number 01
+
+fn.sl1(display_id, f'{v.g_}▉', 80)      #-- get the sl1 function from the funcs module !!!
+fn.slm(msg.append_01, f'{v.g_}▉▉', 97)    #-- middle line uses text fetched from the messages module !!!!
+fn.sl2(f'{v.g_}▉', 80)
+
+frame_id = '01'
+fn.outp_in_mssgs('append_', frame_id, 'A-K') #--note: logic error here was fixed
+
+print('\n'*0)   #-- screen fill amount for id= '02'
+
+First recording. This is my second recording.
+I am testing out the Super Whisper for Windows after fixing with Vulcan.
+I am testing out the Super Whisper for Windows after fixing with Vulcan.
+Testing one two three the previous words are from Dragon NaturallySpeaking which I always had so why was I hunting for some weird other speech to text applications like super whisper? Control space and seeing if Super Whisper takes over.It does.Both programs are now working.

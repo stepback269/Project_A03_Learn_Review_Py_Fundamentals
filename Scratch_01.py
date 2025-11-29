@@ -13,6 +13,19 @@ from Package_03 import vars_01 as v  #-- google "python syntax of an import from
 from Package_03 import mssgs_01 as msg
 from Package_03 import funcs_01 as fn
 
+print(f'(4) The importation of Package_03 / Scratch_01 has begun')
+
+print(f'Testing slicing problem')
+test_list_10 = list(range(10))
+print(f'{test_list_10 =} ')
+test_slice = test_list_10[7::]
+print(f'{test_slice =} ')
+pos_index= len(test_list_10)-3 # -R equals -3 because [ ... 7, 8, 9] where index of 9 is -1
+print(f'{pos_index =} ')
+print(f'-R equals -3 here because [ ... 7, 8, 9] where index of 9 is -1')
+print(f'So pos_index= len(test_list_10)-R is correct\n\n')
+# breakpoint()
+
 os.system('cls')
 print(f'\n\n', '*'*60,'\n')
 ##clear the screen using https://www.naukri.com/code360/library/how-to-clear-a-screen-in-python
@@ -30,14 +43,17 @@ l1.extend(l2)
 print(f"TESTING: in order are:\n l1 = ['apples', 'oranges', 'fruits']\nl2 = [[1,2,3]] and extend result")
 print(f'{l1}\n')  #-- It works
 
-skinny= list(range(100))
+skinny= list(range(115))
 fat = fn.fatten(skinny)
 print(f'This is the skinny list\n{skinny}\n')
 print(f'This is the fat list\n{fat}\n')
 print(f'{v.yy_}{fat[0]}')
 fn.strip_outr_bracks(fat[1])
+print(f'\t\t{v.z_}--^^*-- above was gen\'ed using my strip_outr_bracks() function{v.yy_}' )
 fn.strip_inner_bracks(fat[2])
-print(f'tuple({fat[3]}){v.z_}')
+print(f'\t\t{v.z_}--^^*-- above was gen\'ed using my strip_inner_bracks() function{v.yy_}' )
+print(f'tuple({fat[3]}){v.z_}\n')
+print(f'remainder= {v.yy_}{fat[4]}{v.z_}')
 fn.skip(2)
 breakpoint()
 

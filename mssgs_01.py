@@ -1,36 +1,42 @@
-# Date: 8/03/2025
+# Date: 10/22/2025
+
+print(f'(2) The importation of PAckage_03 / mssgs_01 into memory has begun')
 # This module will hold the message lines for the Learn_Lists_and_Modules main
 # This module will be imported as "msg"
 '''
 ... more to follow
 '''
-import vars_01 as v #-- we are NOT importing the primary vars because main already loaded them !!!
-#from . import funcs_01 as fn
+from . import vars_01 as v #-- we are NOT importing the primary vars because main already loaded them !!!
+from . import funcs_01 as fn
 
-#v = vars_01() #-- because above ^^^ imports are blocked
+#v = vars_01() #-- if above ^^^ imports are blocked
 #fn = funcs_01()
 
-#print(f'(1) The importation of mssgs_01 into Main has begun\n')
+
 
 
 # Title Box ('00')      --- vvv --- capital A-Z has lower ascii code than lower case a-z
-intro_00a = f'{v.yy_}WELCOME TO LEARNING AND REVIEWING re PYTHON LISTS{v.W_}'
-intro_00b = f'{v.yy_}AND re LAYERED importing of MODULES{v.W_}'
+intro_00a = f'{v.yy_}WELCOME TO LEARNING AND REVIEWING of the PYTHON language{v.W_}'
+intro_00b = f'{v.yy_}(Current version includes working with LISTS and STRINGS){v.W_}'
 
-intro_00A = f'(00)  <-- This is the {v.yy_}current lesson frame number{v.W_}'
-intro_00B = f'The frame number (display_id) {v.yy_}will be incrementing{v.W_} as we advance thru lessons'
-intro_00C = f'At the moment this is {v.yy_}merely an introductory{v.W_} first frame'
-intro_00D = f'We will be exercising various {v.yy_}Python list methods{v.W_} here'
-intro_00E = 'Additionally, many other Python features are brought to light at the same time including but not limited to:'
+intro_00A = f'(00)  <-- This is the {v.yy_}current lesson frame identifier (alphanumeric){v.W_}'
+intro_00B = f'The frame number (display_id) {v.yy_}will noramlly be incrementing{v.W_} as we advance thru lessons'
+intro_00C = f'Advance by hitting the "c" or "Space" keys ... {v.yy_}Use the "m" key to expose Aside lessons{v.W_}'
+intro_00D = f'We will be exercising various {v.yy_}Python features{v.W_}, for example List Methods\n'
+intro_00E = ('Click the this link to turn on study music:  https://www.youtube.com/watch?v=t5wIhzyqAzg\n'
+             'Many Python features are brought to light,  including but not limited to:')
 
-intro_00F = f'(a) Using the {v.yy_}Package_01 / vars_01{v.W_} module to print different colors on the console'
+intro_00F = f'(a) Using the {v.yy_}Package_03 / vars_01{v.W_} module to print different colors on the console'
 intro_00G = f'(b) Using {v.yy_}string alignment{v.z_} (e.g., Str.center, spc:<10, more)'
 intro_00H = f'(c) Using the {v.yy_}funcs_01 module{v.z_} to repeatedly generate indented lists like this one'
 intro_00I = f'(d) Using the {v.yy_}Webster module{v.z_} to open additional info/{v.r_}MUSIC{v.z_} in the web browser'
 intro_00J = f'(e) Using the {v.yy_}Keyboard module{v.z_} to detect {v.g_}single{v.z_} keystroke inputs'
 intro_00K = f'(f) Linking to {v.yy_}my own "Back of Stage" blog{v.z_} to provide more {v.g_}on-topic{v.z_} information'
 intro_00L = f'(g) Opening a {v.yy_}"More to Explore"{v.z_} informational web page ---> {v.yy_}Look in your browser -->{v.z_}'
-
+intro_00M = f'(h) ____'
+intro_00N = f'(i) ____'
+intro_00O = f'(j) ____'
+intro_00P = f'(k) ____'
 
 intro_00_in_list = [intro_00F, intro_00G, intro_00H, intro_00I, intro_00J, intro_00K, intro_00L ]
 #--^^^-- used in the outputting of the indented list ???
@@ -67,6 +73,13 @@ intro_01J = f'\nNote that not all fore and background combinations work well wit
 intro01_list_A = []
 intro01_list_B = []
 #--^^^-- Add function to step thru lists and print them out e.g. print intro_{display_id){next_abc}
+
+# Title Box ('22')
+intro_22 = f'OPTIONS PANEL -- type 1 key to select'
+intro_22A = f'Below is a table of selection keys (e.g., g=, u=, x= )'
+intro_22B = f'Hit the key to activate the function (e.g., g=, u=, x= )'
+intro_22C = f'(To Be Determined)'
+
 
 aside_001 = f'{v.z_}First "Aside" frame re: {v.yy_}The WEBSTER module{v.z_}'
 aside_001A = f'(a) There are {v.yy_}hundreds of External Modules{v.z_} (a.k.a. "Libraries"for Python)'

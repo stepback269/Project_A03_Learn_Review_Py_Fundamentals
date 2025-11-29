@@ -1,9 +1,10 @@
-print(f'Date: 10/06_M2/2025   current editing line = search for "NEW"  =fatten() function')
+#print(f'Date: 10/16_M2/2025   current editing line = search for "NEW"  =fatten() function')
 
+print(f'(3) The importation of Package_03 / funcs_01 into memory has begun')
 # check out the Data Engineer: https://www.youtube.com/@GambillDataEngineering
 
-import vars_01 as v  #-- google "python syntax of an import from statement"
-import mssgs_01 as msg
+from . import vars_01 as v  #-- google "python syntax of an import from statement"
+from . import mssgs_01 as msg
 import keyboard
 import pyautogui as gu
 import webbrowser
@@ -15,7 +16,7 @@ of those modules, namely, those of the vars_01 module plus those of the mssgs_01
 
 # Use in PyCharm: Ctrl + Shft + x to insert hash tag (#) and advance to next line (was used immediately below)
 # ----------------------------------------------
-#print(f'(3) The importation of funcs_01 into Main has begun\n')
+
 
 
 def clear_d_screen(lines: int = 30):         #-- use os.clr and skip instead
@@ -71,7 +72,13 @@ def fatten(skinny, eps = 25):   #-- skinny= flat list, eps= elements per full su
     #  [012 ...((N=1)*eps-1)] [25 ... ((N=2)*eps-1)] [50 ...((N=3)*eps-1)] ... [ ... (N*eps-1)] --picture if index starts as 0
     #fat = [sub for i in range(num_fulls)]   ###- replace sub with a comprehension TO BE CONTINUED
     fat = [[skinny[(n*eps):(n+1)*eps]] for n in range(num_fulls)]
-    #fat.extend(reaminder)  # --STILL NEED TO COMPLETE THIS PART
+    if r != 0:                  # is there a non-full remainder?
+        print(f'{r}')
+        pos_idx = l-r           #positive index is equal to length minus remainder
+        remain = skinny[pos_idx::]         # this walks forward to the end inclusive
+        #remain_revd = skinny[-1:-int(r+1):-1]   # start at last element [-1] and walk backwards to include [-r]
+        #remain =remain_revd[::-1]               # reverse the backward walk
+        fat.append([remain])                ##-- I don't undestand why I have to put remainder in sq brackets ???
     return fat
 
 
@@ -210,8 +217,8 @@ def outp_centrd_mssgs(mssg_type= 'intro_', frame_id= '00', lo_hi_range= 'A-Z'):
         #exec(outp_mssg_i)   #-- THIS DIDN'T WORK
     return
 
-def outp_in_list(list_name = msg.intro_00_in_list, colors = 'GREEN', indent=10, spc=' '):
-    for item in list_name:
+def outp_in_list(list_name = 'intro_00_in_list', colors = 'GREEN', indent=10, spc=' '):
+    for item in msg.getattr(list_name):
         gotten_mssg = getattr(msg, item)
         print(f'{v.Ansii[colors]}{spc:<10}{gotten_mssg}')       #-- note colon between spc and indent amount
     #print(f'{x4}\nend of for loop hit <--a debug notification\n')
@@ -234,8 +241,8 @@ def outp_in_mssgs(mssg_type= 'intro_', frame_id= '00', lo_hi_range= 'A-Z'):
         print(f'{spc:<10}{outp_mssg_i}')
     return
 
-def outp_list(list_name = msg.intro01_list_A, color = v.C_, indent=10):  ## 157
-    for item in list_name:
+def outp_list(list_name = 'intro01_list_A', color = v.C_, indent=10):  ## 157
+    for item in msg.getattr(list_name):
         print(f'{v.yy_}{spc:<10}{item}')       #-- note colon between spc and indent amount
     #print(f'{x4}\nend of for loop hit <--a debug notification\n')
     return
