@@ -1,126 +1,6 @@
 import inspect
 import sys
 import os
-
-import time
-import pyttsx3 as talk
-engine = talk.init()
-import pygame as pg
-
-# Time delay settings for time.sleep() arguments
-t0 = 0.5; t1 = 1.3; t2 = 2.5; t3 = 4; t4 = 6.; t5 = 20.
-
-#Search for "#NEXT" to skip to next code to update
-
-from Package_03 import vars_01 as v     #-- google "python syntax of an import from statement"
-from Package_03 import funcs_01 as fn
-from Package_03 import funcs_02 as f2
-from Package_03 import mssgs_01 as msg
-
-print(f'{v.yy_}Date = 12/22 ver:A3/2025{v.z_}\t\tCall this {v.yy_}LLM-ver_A2{v.z_}. We are in Scratch_01\n')
-time.sleep(t3)
-
-f2.qif_Talk_ready()
-
-um = '~ ~ ~ ~ ~ ~ ~ ~ . . ......'
-um2 = '~ ~ ~ ~ ~ ~ ~ ~ . . ......  ~ ~ ~ ~ ~ ~ ~ ~ . . ......'
-um3 = '~ ~ ~ ~ ~ ~ ~ ~ . . ......  ~ ~ ~ ~ ~ ~ ~ ~ . . ......   ~ ~ ~ ~ ~ ~ ~ ~ . . ......'
-umA = '~ ~ ~ ~ ~ ~ ~ ~ . . ......'*10
-
-f2.Talk_go(um, f'{um} This is a run of scratch zero one {umA}inside the el el em version A 2 module {umA}on December 22 {um} 20 25', um, 130, 1)
-time.sleep(t1)
-print(f'{v.yy_}Talker should have said:{v.z_}')
-print(f'This is a run of Scratch 01 ....')
-print(f'At a rate = 130 words/min with a female voice, {v.yy_}um = "~ ~ ~ ~ ~ ~ ~ ~ . . ......"{v.z_} \n')
-time.sleep(t3)
-
-print(f'Time and Pygame and Pyttsx3 have been successfully been imported\n')
-time.sleep(t1)
-print(f'Next ... is a test of new funcs_02 functions including qab_cwd() which Queries About the Current working Directory')
-time.sleep(t1)
-
-f2.qab_cwd()    #-- query what the current work directory is
-fn.skip(3)      #-- skip 3 lines to separate from breakpoint notice
-
-
-
-
-f2.Talk_go(um, f'{um} This is a test inside el el em version A2, talk go is causing pee why tea tea ess ex three to talk here', um, 128, 0)
-time.sleep(t1)
-print(f'{v.yy_}Talker should have said:{v.z_}')
-print(f'This is a test inside el el em version A2, talk go is causing pee why tea tea ess ex three to talk here')
-print(f'At a rate = 128 words/min with a male voice')
-fn.skip(2)      #-- skip 2 lines to separate from next notice
-
-time.sleep(t4)
-
-f2.qif_Talk_ready(); fn.skip(2)
-f2.Talk_go(um, f'{um} This is another test inside el el em version A 2, talk go is causing pee why tea tea ess ex three to talk here', um, 130, 1)
-time.sleep(t2)
-print(f'{v.yy_}Talker should have said:{v.z_}')
-print(f'This is another test inside el el em version A2, talk go is causing pee why tea tea ess ex three to talk here')
-print(f'At a rate = 130 words/min with a female voice')
-fn.skip(2)      #-- skip 2 lines to separate from next notice
-time.sleep(t4)
-
-target_save_path0 = f'C:\\Users\\gideon\\Python_Projects_A0\\Project_A03_Learn_Fundamentals\\.venv\\Package_03\\'
-target_save_path_ext1 = f'waves_01\\'
-
-qif_same = f2.qif_cwd_is_target(target_save_path0, target_save_path_ext1)
-if qif_same == True:
-    print(f'The target path matches the current work directory')
-else:
-    print(f'The target path DOES NOT match the current work directory')
-
-# print(f'Current working directory is {os.getcwd()}')  #-- https://www.youtube.com/watch?v=VfRuZOFNfpc
-fn.skip(3)
-
-speech= f'{um2} The plan is {umA}to next place some speeches {umA}inside the messages module {umA}and call them up with a function'
-f2.Talk_go(um, speech, um, 128, 0)
-time.sleep(t1)
-print(f'{v.yy_}Talker should have said:{v.z_}')
-print(f'The plan is to next place some speeches inside the messages module and call them up with a function')
-print(f'At a rate = 128 words/min with a male voice using a predefined speech string with UMs inside')
-fn.skip(2)      #-- skip 2 lines to separate from next notice
-
-time.sleep(t4)
-
-breakpoint()
-
-
-#NEXT
-
-#file_save_path = f'C:\\Users\\gideon\\PycharmProjects\\PythonProject\\GG_Project-2_Strings_and-Files\\.venv\\Pre-computes_03\\non_py_files\\'
-target_file = str(file_save_path + "Talker_output.wav")
-print(f'Save to wav file has begun')
-engine.save_to_file(f"Hello, this is a test of saving text to an em pee three file" +
-                    "and then playing back the file using pie game", target_file)
-#engine.runAndWait()
-time.sleep(pause_1)
-
-print(f'Save to WAV file is finished')
-
-pg.init()
-pg.mixer.init()
-
-print(f'Play of sound of wav file is beginning now')
-
-sound_files = ['Audacity reverb 02.wav', 'GG_test_01.mp3', 'Talker_output.wav', '6ec8ccb72e97ef2a98aa92d0f231b36f.mp3']
-
-speaker_volume = 0.5
-pg.mixer_music.set_volume(speaker_volume)
-
-for sound_file in sound_files:
-    target = str(file_save_path) + str(sound_file)
-    pg.mixer_music.load(f'{target}')
-    pg.mixer_music.play()
-    while pg.mixer_music.get_busy() == True:
-        continue
-
-breakpoint()
-
-breakpoint()
-
 import keyboard             #--- enable single key press inputs
 import pyautogui as gu      #--- enable cursor control
 import webbrowser           #--- enable opening up desired URL's for learning frames
@@ -129,22 +9,9 @@ import pyperclip            #--- enable use of clipboard
 from random import choice   #--- enable random choice() method
 from random import shuffle   #--- enable random shuffle() method
 
-#from Package_03 import vars_01 as v  #-- google "python syntax of an import from statement"
-#from Package_03 import mssgs_01 as msg
-#from Package_03 import funcs_01 as fn
-
-print(f'(4) The importation of Package_03 / Scratch_01 has begun')
-
-print(f'Testing slicing problem')
-test_list_10 = list(range(10))
-print(f'{test_list_10 =} ')
-test_slice = test_list_10[7::]
-print(f'{test_slice =} ')
-pos_index= len(test_list_10)-3 # -R equals -3 because [ ... 7, 8, 9] where index of 9 is -1
-print(f'{pos_index =} ')
-print(f'-R equals -3 here because [ ... 7, 8, 9] where index of 9 is -1')
-print(f'So pos_index= len(test_list_10)-R is correct\n\n')
-# breakpoint()
+from Package_03 import vars_01 as v  #-- google "python syntax of an import from statement"
+from Package_03 import mssgs_01 as msg
+from Package_03 import funcs_01 as fn
 
 os.system('cls')
 print(f'\n\n', '*'*60,'\n')
@@ -163,17 +30,14 @@ l1.extend(l2)
 print(f"TESTING: in order are:\n l1 = ['apples', 'oranges', 'fruits']\nl2 = [[1,2,3]] and extend result")
 print(f'{l1}\n')  #-- It works
 
-skinny= list(range(115))
+skinny= list(range(100))
 fat = fn.fatten(skinny)
 print(f'This is the skinny list\n{skinny}\n')
 print(f'This is the fat list\n{fat}\n')
 print(f'{v.yy_}{fat[0]}')
 fn.strip_outr_bracks(fat[1])
-print(f'\t\t{v.z_}--^^*-- above was gen\'ed using my strip_outr_bracks() function{v.yy_}' )
 fn.strip_inner_bracks(fat[2])
-print(f'\t\t{v.z_}--^^*-- above was gen\'ed using my strip_inner_bracks() function{v.yy_}' )
-print(f'tuple({fat[3]}){v.z_}\n')
-print(f'remainder= {v.yy_}{fat[4]}{v.z_}')
+print(f'tuple({fat[3]}){v.z_}')
 fn.skip(2)
 breakpoint()
 

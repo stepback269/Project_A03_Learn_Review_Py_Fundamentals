@@ -1,60 +1,18 @@
-import inspect
-import sys
-import os
-
-import time
-import pyttsx3 as talk
-engine = talk.init()
-import pygame as pg
-
-# Time delay settings for time.sleep() arguments
-t0 = 0.5; t1 = 1.3; t2 = 2.5; t3 = 4; t4 = 6.; t5 = 20.
-
-#Search for "#NEXT" to skip to next code to update
-
-
-from Package_03 import vars_01 as v  #-- google "python syntax of an import from statement"
-from Package_03 import mssgs_01 as msg
-from Package_03 import funcs_01 as fn
-from Package_03 import funcs_02 as f2
-
-
-print(f'{v.yy_}Date = 12/28 ver:A3/2025{v.z_}\t\tCall this {v.yy_}LLM-ver_A2{v.z_}. We are in LLM_ver_A2\n')
-time.sleep(t3)
-
-f2.qif_Talk_ready()
-
-#um = '~ ~ ~ ~ ~ ~ ~ ~ . . ......'
-#um2 = '~ ~ ~ ~ ~ ~ ~ ~ . . ......  ~ ~ ~ ~ ~ ~ ~ ~ . . ......'
-#um3 = '~ ~ ~ ~ ~ ~ ~ ~ . . ......  ~ ~ ~ ~ ~ ~ ~ ~ . . ......   ~ ~ ~ ~ ~ ~ ~ ~ . . ......'
-#umA = '~ ~ ~ ~ ~ ~ ~ ~ . . ......'*10
-
-speech_LLM_001 = f'{fn.um(3)}The date is {fn.um()}December 28 20 25 and {fn.um()}this is module L L M version A two running'
-speech_LLM_002 = f'{fn.um(2)}We are integrating speeches {fn.um(2)} into this module named {fn.um(2)} L L M version A two'
-
-f2.Talk_go(fn.um(), speech_LLM_001, fn.um(), 130, 1)
-time.sleep(t2)
-
-f2.Talk_go(fn.um(), speech_LLM_002, fn.um(), 130, 0)
-
-
+# Date: 9/08a/2025  --Status: added  "m" option for Webster drive function & link to Back Pagesm
+# previous problems: Escaping from Circular Import Hell, overcoming sticky keyboard keys, ...
+# https://steppingback269.blogspot.com/2025/08/crash-burn-rinse-and-repeat-your-slow.html
 '''
-Search (Ctrl + F) for  ##NEW to loacate latest update projects
-The current program design:
-(a) Messaging stings are prefereably stored in the mssgs_01.py file inside PAckage_01
-(b) It might have been better if I had instead stored lesson material in a CSV file (but use non-comma delimiters)
-    that is readble by other programs, including Obsidian
-(c) In the proposed CSV approach (can't use CSV module because only one delimiter for all fileds) there will be:
-        (1) a special start of line delimiter code followed by:
-        (2) 3-char domain initials e.g. TXT, URL, IMG; 
-        (3) frame name prefix string;
-        (4) frame ID number/name string;
-        (5) in-frame, line ID number/namis string (A-Z);
-        (6) main text section;
-        (7) special line terminater code,
-        (8) comments region until next, new line start code is encountered
+The current program desing is lousy because:
+(a) it tries to store learning content in a .py file (the mssgs_01.py) file
+(b) it would be better if it stored lesson material in a CSV file (use non-comma delimiters) that is readble by other
+programs, including Obsidian
+(c) keep the current approach anyway and start over with a _04.py file
+In the proposed CSV approach (can't use CSV module because only one delimiter for all fileds) there will be: (1) a special
+start of line delimiter code followed by: (2) 3-char domain initials e.g. TXT, URL, IMG; (3) frame name prefix string;
+(4) frame ID number/name string; (5) in-frame, line ID number/namis string (A-Z); (6) main text section;
+(7) special line terminater code, (8) comments region until next, new line start code is encountered
 (d) STORE THE csv lines in LISTS
-(e) each main lesson frame is followed by press of "c" or space for continue OR CTRL+SHIFT for showing URL options page
+ (e) each main lesson frame is followed by press of "c" or space for continue OR CTRL+SHIFT for showing URL options page
 
 ... more to follow
 
@@ -63,6 +21,9 @@ Package_03 also contains a funcs_01 module holding many of the functions previou
 Learn_List_Methods file
 '''
 
+import inspect
+import sys
+import os
 import keyboard             #--- enable single key press inputs
 import pyautogui as gu      #--- enable cursor control
 import webbrowser           #--- enable opening up desired URL's for learning frames
@@ -70,11 +31,12 @@ import pyperclip            #--- enable use of clipboard
 #import random
 from random import choice   #--- enable random choice() method
 
-time.sleep(t4)
+from Package_03 import vars_01 as v  #-- google "python syntax of an import from statement"
+from Package_03 import mssgs_01 as msg
+from Package_03 import funcs_01 as fn
 
 fn.clear_d_screen()
-
-# breakpoint()
+#breakpoint()
 
 # Here is first WELCOME mat using the imported functions (fn[dot] prefix)
 spc = ' '
@@ -85,32 +47,11 @@ fn.slm(msg.intro_00a)    #-- middle line 1 uses text fetched from the messages m
 fn.slm(msg.intro_00b)
 fn.sl2()
 
-f2.Talk_go(fn.um(), msg.speak_intro_00b, fn.um(), 130, 1)
-time.sleep(t2)
-
 frame_id = '00'
 fn.outp_centrd_mssgs('intro_', frame_id, 'A-D')  #-- messages intro_00A thru intro_00D are centerd ones
-fn.outp_in_mssgs('intro_', frame_id, 'F-M')      #-- messages intro_00F thru intro_00K are listed
+fn.outp_in_mssgs('intro_', frame_id, 'F-K')      #-- messages intro_00F thru intro_00K are listed
 
-f2.Talk_go(fn.um(), msg.speak_intro_00A, fn.um(), 130, 0)
-time.sleep(t2)
-
-f2.Talk_go(fn.um(), msg.speak_intro_00B, fn.um(), 130, 1)
-time.sleep(t2)
-
-f2.Talk_go(fn.um(), msg.speak_intro_00C, fn.um(), 130, 0)
-time.sleep(t2)
-
-f2.Talk_go(fn.um(), msg.speak_intro_00D, fn.um(), 130, 1)
-time.sleep(t2)
-
-f2.Talk_go(fn.um(), msg.speak_intro_00E, fn.um(), 130, 0)
-time.sleep(t2)
-
-#f2.Talk_go(fn.um(), msg.speak_intro_00A, fn.um(), 130, 0)
-#time.sleep(t2)
-
-print('\n'*1)   #-- screen partial fill amount for id= '00'
+print('\n'*2)   #-- screen partial fill amount for id= '00'
 #--------------------------------------------#
 #fn.clear_keybd_queue()
 response = fn.wait_4c_key('00.1')   #--vv-- aside_001 is the next frame to be shown
@@ -140,7 +81,7 @@ fn.sl2(f'{v.g_}▉', 80)
 
 frame_id = '001'
 fn.outp_in_mssgs('aside_', frame_id, 'A-K') #--note: logic error here was fixed
-#print('\n')
+print('\n')
 
 #------initial URL's demo----vvv---------------#
 

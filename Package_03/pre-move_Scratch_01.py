@@ -12,12 +12,12 @@ t0 = 0.5; t1 = 1.3; t2 = 2.5; t3 = 4; t4 = 6.; t5 = 20.
 
 #Search for "#NEXT" to skip to next code to update
 
-from Package_03 import vars_01 as v     #-- google "python syntax of an import from statement"
-from Package_03 import funcs_01 as fn
-from Package_03 import funcs_02 as f2
-from Package_03 import mssgs_01 as msg
+import vars_01 as v     #-- google "python syntax of an import from statement"
+import funcs_01 as fn
+import funcs_02 as f2
+import mssgs_01 as msg
 
-print(f'{v.yy_}Date = 12/22 ver:A3/2025{v.z_}\t\tCall this {v.yy_}LLM-ver_A2{v.z_}. We are in Scratch_01\n')
+print(f'{v.yy_}Date = 12/18 ver:A3/2025{v.z_}\t\tCall this {v.yy_}LLM-ver_A{v.z_}. We are in Scratch_01\n')
 time.sleep(t3)
 
 f2.qif_Talk_ready()
@@ -27,7 +27,7 @@ um2 = '~ ~ ~ ~ ~ ~ ~ ~ . . ......  ~ ~ ~ ~ ~ ~ ~ ~ . . ......'
 um3 = '~ ~ ~ ~ ~ ~ ~ ~ . . ......  ~ ~ ~ ~ ~ ~ ~ ~ . . ......   ~ ~ ~ ~ ~ ~ ~ ~ . . ......'
 umA = '~ ~ ~ ~ ~ ~ ~ ~ . . ......'*10
 
-f2.Talk_go(um, f'{um} This is a run of scratch zero one {umA}inside the el el em version A 2 module {umA}on December 22 {um} 20 25', um, 130, 1)
+f2.Talk_go(um, f'{um} This is a run of scratch zero one {umA}inside the el el em version A module {umA}on December twelve 20 25', um, 130, 1)
 time.sleep(t1)
 print(f'{v.yy_}Talker should have said:{v.z_}')
 print(f'This is a run of Scratch 01 ....')
@@ -45,20 +45,20 @@ fn.skip(3)      #-- skip 3 lines to separate from breakpoint notice
 
 
 
-f2.Talk_go(um, f'{um} This is a test inside el el em version A2, talk go is causing pee why tea tea ess ex three to talk here', um, 128, 0)
+f2.Talk_go(um, f'{um} This is a test inside el el em version A, talk go is causing pee why tea tea ess ex three to talk here', um, 128, 0)
 time.sleep(t1)
 print(f'{v.yy_}Talker should have said:{v.z_}')
-print(f'This is a test inside el el em version A2, talk go is causing pee why tea tea ess ex three to talk here')
+print(f'This is a test inside el el em version A, talk go is causing pee why tea tea ess ex three to talk here')
 print(f'At a rate = 128 words/min with a male voice')
 fn.skip(2)      #-- skip 2 lines to separate from next notice
 
 time.sleep(t4)
 
 f2.qif_Talk_ready(); fn.skip(2)
-f2.Talk_go(um, f'{um} This is another test inside el el em version A 2, talk go is causing pee why tea tea ess ex three to talk here', um, 130, 1)
+f2.Talk_go(um, f'{um} This is another test inside el el em version A, talk go is causing pee why tea tea ess ex three to talk here', um, 130, 1)
 time.sleep(t2)
 print(f'{v.yy_}Talker should have said:{v.z_}')
-print(f'This is another test inside el el em version A2, talk go is causing pee why tea tea ess ex three to talk here')
+print(f'This is another test inside el el em version A, talk go is causing pee why tea tea ess ex three to talk here')
 print(f'At a rate = 130 words/min with a female voice')
 fn.skip(2)      #-- skip 2 lines to separate from next notice
 time.sleep(t4)

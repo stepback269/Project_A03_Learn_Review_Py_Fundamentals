@@ -78,7 +78,6 @@ from random import shuffle   #--- enable random shuffle() method
 from Package_03 import vars_01 as v  #-- google "python syntax of an import from statement"
 from Package_03 import mssgs_01 as msg
 from Package_03 import funcs_01 as fn
-from Package_03 import funcs_02 as f2
 
 os.system('cls')        #clear the screen using https://www.naukri.com/code360/library/how-to-clear-a-screen-in-python
 print(f'\n', '*'*60,'\n')
